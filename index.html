@@ -15,6 +15,7 @@
       href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Source+Sans+3:wght@400;500;600&display=swap"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="chatbot.css">
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to main content</a>
@@ -110,6 +111,47 @@
           </li>
         </ul>
       </section>
+      <section id="weather-section" class="weather-section"> 
+        <h2>Live Weather Checker</h2> 
+        <p>Enter a city to check its current weather.</p> 
+        <div class="weather-controls"> 
+          <input id="cityInput" type="text" placeholder="Enter city (e.g., Jaipur)" /> 
+          <button id="weatherButton" type="button">Get Weather</button> 
+        </div> 
+        <p id="weatherResult" aria-live="polite">Enter a city and click Get Weather.</p> 
+      </section>
+      <section id="aiChatSection" class="ai-chat">
+        <h2>Ask My AI Assistant</h2>
+      
+        <p>
+          Ask questions about this portfolio,
+          projects, and technologies.
+        </p>
+      
+        <div
+          id="chatMessages"
+          aria-live="polite"
+        ></div>
+      
+        <div class="chat-controls">
+          <input
+            type="text"
+            id="userInput"
+            placeholder="Ask a question..."
+          />
+      
+          <button id="sendButton" type="button">
+            Send
+          </button>
+        </div>
+      
+        <p id="chatStatus" role="status"></p>
+      
+        <p class="chat-note">
+          AI chat is available during the local
+          classroom demonstration only.
+        </p>
+      </section>
     </main>
 
     <footer class="site-footer">
@@ -119,6 +161,10 @@
       </p>
     </footer>
 
+    <script src="config.js"></script>
     <script src="script.js"></script>
+    <script src="chatbot.js"></script>
+
+
   </body>
 </html>
