@@ -497,3 +497,20 @@ main {
     width: 100%;
   }
 }
+
+#projectSearch {
+  display: block;
+  width: 100%;
+  max-width: 38rem;
+  padding: 0.7rem 0.8rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--surface);
+  color: var(--text);
+}
+
+.search-status {
+  margin: 0.4rem 0 1rem;
+  color: var(--muted);
+  font-size: 0.9rem;
+}

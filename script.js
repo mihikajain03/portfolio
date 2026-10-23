@@ -75,6 +75,31 @@
 
 console.log("JavaScript connected");
 
+// Search by project title, description, or technology.
+const projectSearch = document.getElementById("projectSearch");
+const projectCards = Array.from(document.querySelectorAll(".project-card"));
+const projectSearchStatus = document.getElementById("projectSearchStatus");
+const noProjectsMessage = document.getElementById("noProjectsMessage");
+
+function filterProjects() {
+  const query = projectSearch.value.trim().toLowerCase();
+  let visibleCount = 0;
+
+  projectCards.forEach((card) => {
+    const searchableText = `${card.textContent} ${card.dataset.search || ""}`.toLowerCase();
+    const matches = searchableText.includes(query);
+    card.hidden = !matches;
+    if (matches) visibleCount += 1;
+  });
+
+  projectSearchStatus.textContent = query
+    ? `Showing ${visibleCount} of ${projectCards.length} projects for "${projectSearch.value.trim()}".`
+    : `Showing all ${projectCards.length} projects.`;
+  noProjectsMessage.hidden = visibleCount !== 0;
+}
+
+projectSearch.addEventListener("input", filterProjects);
+
 const cityInput = document.getElementById("cityInput");
 const weatherButton = document.getElementById("weatherButton");
 const weatherResult = document.getElementById("weatherResult");
